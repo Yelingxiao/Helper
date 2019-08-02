@@ -1,0 +1,37 @@
+/*
+* name: 指定 keyframe 值，默认：anime-jump
+* duration: 动画执行时间(同：animation-duration)，默认：1s
+* height: 跳跃高度，默认：100px，方向向上
+* yoyo: 回荡次数，默认：3
+* anime: 自定义 keframes， 默认：none
+* 可通过 animation-* 属性配置其余项。
+*/
+
+.jump(@name: anime-jump, @duration: 1s,
+  @height: 100px, @yoyo: 3,
+  @anime: none) {
+
+  @total: @yoyo * 2 + 1;
+
+  @prefab: {
+    .loop;
+  };
+
+  .loop(@index: 0) when (@total > @index) {
+    @progress: percentage(@index / @total);
+    @{progress} {
+      transform: if(
+        mod(@index, 2) > 0,
+        translateY(-@height * (1 - (@index - 1) / @total)),
+        translateY(0)
+      );
+    }
+    .loop(@index + 1);
+  }
+
+  .factor(
+    @name,
+    if(isruleset(@anime), @anime, @prefab),
+    @duration
+  );
+}

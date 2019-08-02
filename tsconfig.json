@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+      "strict": true,
+      "esModuleInterop": true,
+      "target": "esnext",
+      "module": "es6",
+      "noEmitOnError": true,
+      "removeComments": true,
+      "preserveConstEnums": false,
+      "sourceMap": true,
+      "outDir": "./lib",
+      "lib": ["esnext"],
+      "downlevelIteration": true,
+      "declaration": true,
+      "declarationDir": "./lib",
+      "moduleResolution": "node"
+  },
+  // 入口文件
+  "include": [
+      "src/core/index.ts"
+  ]
+}
