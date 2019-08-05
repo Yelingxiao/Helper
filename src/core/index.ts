@@ -1,6 +1,4 @@
-const greeter = (person: string) => {
-  return 'Hello, ' + person
+import * as common from './common/index'
+export default {
+  common
 }
-
-const user = 'Jane User'
-export default greeter

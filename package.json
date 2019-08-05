@@ -18,22 +18,29 @@
   },
   "main": "index.js",
   "scripts": {
-    "dev": "rm -rf dist && rollup -c --watch",
-    "build": "rm -rf dist && rm -rf lib &&tsc && NODE_ENV=production rollup -c"
+    "dev": "rm -rf dist &&  rollup -c --watch",
+    "build": "rm -rf dist && rm -rf lib &&tsc && NODE_ENV=production rollup -c",
+    "start": "node server.js"
   },
   "author": "Yelingxiao",
   "license": "ISC",
   "devDependencies": {
+    "@babel/plugin-proposal-decorators": "^7.4.4",
+    "@babel/preset-env": "^7.5.5",
+    "@babel/preset-typescript": "^7.3.3",
     "@typescript-eslint/eslint-plugin": "^1.13.0",
     "@typescript-eslint/parser": "^1.13.0",
     "eslint-config-alloy": "^2.0.5",
     "eslint-plugin-typescript": "^0.14.0",
+    "koa": "^2.7.0",
+    "koa-static": "^5.0.0",
     "rollup": "^1.18.0",
     "rollup-plugin-alias": "^1.5.2",
     "rollup-plugin-babel": "^4.3.0",
     "rollup-plugin-babel-minify": "^9.0.0",
     "rollup-plugin-commonjs": "^10.0.1",
     "rollup-plugin-eslint": "^7.0.0",
+    "rollup-plugin-livereload": "^1.0.1",
     "rollup-plugin-node-resolve": "^5.2.0",
     "rollup-plugin-typescript": "^1.0.1",
     "typescript": "^3.5.3"

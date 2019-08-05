@@ -1,2 +1,5 @@
-declare const greeter: (person: string) => string;
-export default greeter;
+import * as common from './common/index';
+declare const _default: {
+    common: typeof common;
+};
+export default _default;

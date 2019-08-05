@@ -5,30 +5,34 @@ import resolve from 'rollup-plugin-node-resolve'
 import typescript from 'rollup-plugin-typescript'
 import { eslint } from 'rollup-plugin-eslint'
 import minify from 'rollup-plugin-babel-minify'
+import livereload from 'rollup-plugin-livereload'
 
 const IS_PRO = process.env.NODE_ENV === 'production'
 
 export default {
   input: './src/core/index.ts',
   plugins: [
-    babel(),
-    alias({
-      resolve: ['.ts']
-    }),
     eslint({
       include: ['src/**/*.ts']
+    }),
+    babel({
+      extensions: ['.ts', '.js'],
+      include: ['src/**']
+    }),
+    alias({
+      resolve: ['.ts']
     }),
     typescript(),
     commonjs(),
     resolve(),
-    IS_PRO && minify({ comments: false })
+    IS_PRO ? minify({ comments: false }) : livereload()
   ],
   output: [
     {
-      file: 'dist/moto.min.js',
+      file: 'dist/index.js',
       format: 'umd',
-      name: 'moto',
-      sourcemap: true
+      name: 'main'
+      // sourcemap: true
     }
   ]
 }
