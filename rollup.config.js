@@ -10,7 +10,7 @@ import livereload from 'rollup-plugin-livereload'
 const IS_PRO = process.env.NODE_ENV === 'production'
 
 export default {
-  input: './src/core/index.ts',
+  input: './src/index.ts',
   plugins: [
     eslint({
       include: ['src/**/*.ts']

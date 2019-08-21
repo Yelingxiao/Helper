@@ -17,6 +17,6 @@
   },
   // 入口文件
   "include": [
-      "src/core/index.ts"
+      "src/index.ts"
   ]
 }

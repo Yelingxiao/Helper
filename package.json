@@ -19,7 +19,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "rm -rf dist &&  rollup -c --watch",
-    "build": "rm -rf dist && rm -rf lib &&tsc && NODE_ENV=production rollup -c",
+    "build": "rm -rf dist && rm -rf lib && tsc && NODE_ENV=production rollup -c",
     "start": "node server.js"
   },
   "author": "Yelingxiao",
@@ -43,6 +43,7 @@
     "rollup-plugin-livereload": "^1.0.1",
     "rollup-plugin-node-resolve": "^5.2.0",
     "rollup-plugin-typescript": "^1.0.1",
+    "ts-node": "^8.3.0",
     "typescript": "^3.5.3"
   }
 }
