@@ -2,7 +2,7 @@
  * @Author: 叶凌宵
  * @Date: 2019-08-21 19:32:20
  * @Last Modified by: 叶凌宵
- * @Last Modified time: 2019-08-21 21:05:23
+ * @Last Modified time: 2019-08-22 16:25:52
  * loadsh 4.17.15
  */
 export function chunk(array: Array, size: Number = 1): Array {
@@ -14,8 +14,18 @@ export function chunk(array: Array, size: Number = 1): Array {
       newArray.push(nowArray)
       nowArray = []
     }
-    console.log(newArray)
   })
+  if (nowArray.length) newArray = [...newArray, nowArray]
   return newArray
 }
-console.log(chunk([2, 3, 4, 45, 22], 3))
+
+export function compact(array: Array): Array {
+  return array.filter(item => item)
+}
+
+export function concat(...theArgs: any): Array {
+  return theArgs.map(item => {
+    return Array.isArray(item) ? Number(item.join(',')) : item
+  })
+}
+console.log(concat([1], 2, [3], [[4]]))

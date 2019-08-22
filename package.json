@@ -1,9 +1,8 @@
 {
-  "name": "moto.js-typescript",
+  "name": "helper-typescript",
   "version": "1.0.0",
-  "description": "moto.js + TypeScript",
+  "description": "helper",
   "contributors": [
-    "JetLu <i@lufei.so>",
     "Yelingxiao <1003772257@qq.com>"
   ],
   "keywords": [
