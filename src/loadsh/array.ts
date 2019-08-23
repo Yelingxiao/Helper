@@ -28,4 +28,8 @@ export function concat(...theArgs: any): Array {
     return Array.isArray(item) ? Number(item.join(',')) : item
   })
 }
-console.log(concat([1], 2, [3], [[4]]))
+
+export function difference(inspect: Array, exclude: Array): Array {
+  return inspect.filter(item => !exclude.includes(item))
+}
+console.log(difference([1, 2, 3], [3, 4]))
