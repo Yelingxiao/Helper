@@ -32,4 +32,11 @@ export function concat(...theArgs: any): Array {
 export function difference(inspect: Array, exclude: Array): Array {
   return inspect.filter(item => !exclude.includes(item))
 }
-console.log(difference([1, 2, 3], [3, 4]))
+
+export function drop(array: Array, n: Number = 1): Array {
+  for (let i = 0; i < n; i++) {
+    array.shift()
+  }
+  return array
+}
+console.log(drop([1, 2, 3], 5))
