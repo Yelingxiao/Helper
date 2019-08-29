@@ -39,4 +39,11 @@ export function drop(array: Array, n: Number = 1): Array {
   }
   return array
 }
-console.log(drop([1, 2, 3], 5))
+
+export function dropRight(array: Array, n: Number = 1): Array {
+  for (let i = 0; i < n; i++) {
+    array.pop()
+  }
+  return array
+}
+console.log(dropRight([1, 2, 3], 5))
