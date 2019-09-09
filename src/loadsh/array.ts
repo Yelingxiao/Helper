@@ -68,4 +68,15 @@ export function fromPairs(pairs: array): object {
 export function head(array: array): any {
   return array[0]
 }
-console.log(head([]))
+
+export function initial(array: array): any {
+  array.pop()
+  return array
+}
+
+export function intersection(...arr) {
+  arr.forEach(item => {
+    // item.
+  })
+}
+console.log(intersection([1, 2], [2, 3]))
